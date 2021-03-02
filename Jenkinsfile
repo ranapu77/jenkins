@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage('Gitclone') {
 		steps {
-		git credentialsId: 'gitlab', url: 'http://34.123.184.116/root/ks.git'
+		git credentialsId: 'github', url: 'https://github.com/ksproapp/ks.git'
 		}
 		}
 		stage('Maven Clean'){
