@@ -1,0 +1,13 @@
+ID=$(curl http://35.222.22.81:8081/repository/maven-snapshots/com/ksapp/ks/maven-metadata.xml |grep SNAP | sed -e 's/<version>//' | sed -e 's/<\/version>//' | xargs -n1 |tail -n1)
+VER=$(curl http://35.222.22.81:8081/repository/maven-snapshots/com/ksapp/ks/9-SNAPSHOT/maven-metadata.xml grep -v UTC |tail -n1)
+
+
+Ansible - 34.122.34.48
+Nexus - 35.222.22.81
+Jenkins - 35.239.145.215
+Target Node -  35.239.145.215
+SonarQube -
+
+
+
+http://35.222.22.81:8081/repository/maven-snapshots/com/ksapp/ks/4-SNAPSHOT/ks-4-20210227.023557-5.war
