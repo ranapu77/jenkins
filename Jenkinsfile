@@ -19,10 +19,6 @@ node {
         // Run the maven build
        sh 'mvn compile'
     }
-  stage('mvn test') {
-        // Run the maven build
-       sh 'mvn test'
-    }
   stage('mvn package') {
         // Run the maven build
        sh 'mvn package'
