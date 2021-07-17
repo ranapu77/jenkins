@@ -9,7 +9,7 @@ node {
     }
     stage('mvn clean') {
         // Run the maven build
-      
+         sh 'mvn clean'
     }
       stage('mvn validate') {
         // Run the maven build
