@@ -7,6 +7,11 @@ node {
         // **       in the global configuration.
         
     }
+	stage('mvn version'){
+	sh 'mvn --version'
+	}
+	 
+	
     stage('mvn clean') {
         // Run the maven build
          sh 'mvn clean'
