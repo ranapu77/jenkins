@@ -1,35 +1,43 @@
-node {
-    stage('Preparation') { // for display purposes
-        // Get some code from a GitHub repository
-        git branch: 'main', credentialsId: 'gitpass', url: 'https://github.com/ksproapp/myapp.git'
-        // Get the Maven tool.
-        // ** NOTE: This 'M3' Maven tool must be configured
-        // **       in the global configuration.
-        
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven 'Maven 3.8.1'
     }
-	stage('mvn version'){
-	sh 'mvn --version'
-	}
-	 
-	
-    stage('mvn clean') {
-        // Run the maven build
-         sh 'mvn clean'
-    }
-      stage('mvn validate') {
-        // Run the maven build
-       sh  'mvn validate'
-    }
-  stage('mvn compile') {
-        // Run the maven build
-       sh 'mvn compile'
-    }
-  stage('mvn package') {
-        // Run the maven build
-       sh 'mvn package'
-    }
-  stage('mvn deploy') {
-        // Run the maven build
-       sh 'mvn deploy'
-    }
-}
+
+    stages {
+        stage('Git Clone') {
+            steps {
+               git branch: 'main', credentialsId: 'gitpass', url: 'https://github.com/ksproapp/myapp.git'
+            }
+			}
+		stage('Maven Version'){
+			steps {
+				sh 'mvn --version'
+				}
+				}
+		stage('Maven Clean'){
+			steps {
+				sh 'mvn clean'
+			}
+			}
+		stage('Maven Validate'){
+			steps{
+				sh 'mvn validate'
+				}
+				}
+		stage('Maven Compile'){
+			steps {
+			sh 'mvn compile'
+			}
+			}
+		stage('Maven Package'){
+			steps {
+			sh 'mvn package'
+			}
+			}
+		}
+	}	
+				
+		
