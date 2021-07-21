@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('gitclone') {
             steps {
-                git branch: 'main', credentialsId: 'gitpass',  url: 'https://github.com/ksproapp/myapp.git'
+                git branch: 'main', credentialsId: 'gitpass', url: 'https://github.com/ksproapp/myapp.git'
             }
         }
          stage('Maven Clean') {
@@ -36,3 +36,7 @@ pipeline {
 			}  
 		}
     }
+
+	
+	
+	
