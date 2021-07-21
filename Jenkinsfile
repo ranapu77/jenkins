@@ -1,42 +1,13 @@
 pipeline {
     agent any
     tools {
-    maven 'M3'
-  }
-    stages {
-        stage('gitclone') {
-            steps {
-                git branch: 'main', credentialsId: 'gitpass', url: 'https://github.com/ksproapp/myapp.git'
-            }
-        }
-         stage('Maven Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-			}
-         stage('Maven Compile') {
-            steps {
-                sh 'mvn compile'
-            }
-			}
-         stage('Maven Test') {
-            steps {
-                sh 'mvn test'
-            }
-			}
-         stage('mvn package') {
-            steps {
-                sh 'mvn package'
-            }
-			}
-         stage('mvn deploy') {
-            steps {
-                sh 'mvn deploy'
-            }
-			}  
-		}
+        maven 'MAVEN_PATH' 
     }
-
-	
-	
-	
+    stages {
+         stage('Load Tools') {
+              steps {
+                 sh "mvn -version"
+              }
+         }
+     }
+}
