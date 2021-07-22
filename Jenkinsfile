@@ -9,6 +9,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'gitpass', url: 'https://github.com/ksproapp/myapp.git'
             }
         }
+		 stage('Maven Version') {
+            steps {
+                sh 'mvn --version'
+            }
+			}
          stage('Maven Clean') {
             steps {
                 sh 'mvn clean'
