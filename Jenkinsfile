@@ -9,7 +9,7 @@ node {
         sh 'mvn validate'
     }
 	stage('SonarQube'){	
-	sh 'mvn sonar:sonar -Dsonar.host.url=http://34.136.96.224:9000 -Dsonar.login=57eab3e79bc65441f5271a36e3c9b18f3ba0fe65'
+	sh 'mvn sonar:sonar -Dsonar.host.url=http://34.71.45.99:9000 -Dsonar.login=57eab3e79bc65441f5271a36e3c9b18f3ba0fe65'
 	}
 	
 	stage('Maven Test') {
