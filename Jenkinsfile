@@ -2,6 +2,9 @@ node {
 	stage('Git Clone'){
 		git 'https://github.com/ksproapp/ks.git'
 		}
+	stage('Maven Version){
+		sh 'mvn --version'
+		}
     stage('Maven Clean') {
       sh 'mvn clean'
     }
