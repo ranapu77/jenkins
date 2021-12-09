@@ -38,8 +38,8 @@ pipeline {
 		stage('Sonar Scan'){
 			steps {
 				sh 'mvn sonar:sonar \
-  -Dsonar.host.url=http://34.69.72.22:9000 \
-  -Dsonar.login=b8d111e5bc3de77d935917b7e4b2dd5399f02c46'
+  -Dsonar.host.url=http://34.69.182.82:9000 \
+  -Dsonar.login=14b735d9837b6da8b836e6beb280773d4f8b8ced'
 					}
 					}
 		
