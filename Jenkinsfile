@@ -3,19 +3,19 @@ node {
 	  git credentialsId: 'git', url: 'https://github.com/kartikeyapro/ks.git'
     }
     stage('Maven Clean') {
-        bat 'mvn clean'
+        sh 'mvn clean'
     }
     stage('Maven Validate') {
-        bat 'mvn validate'
+        sh 'mvn validate'
     }
 	 stage('Maven Compile') {
-        bat 'mvn compile'
+        sh 'mvn compile'
     }
 	 stage('Maven Test') {
-        bat 'mvn test'
+        sh 'mvn test'
     }
 	 stage('Maven Package') {
-        bat 'mvn package'
+        sh 'mvn package'
     }
 }
 
