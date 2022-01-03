@@ -1,24 +1,21 @@
 node {
-    stage('Git Clone') { 
-	  git credentialsId: 'git', url: 'https://github.com/kartikeyapro/ks.git'
-    }
-    stage('Maven Clean') {
+
+    stage('git clone') {
+       git credentialsId: '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', url: 'https://github.com/ranapu77/ks.git'
+        }
+    stage('MVN Clean') {
         sh 'mvn clean'
     }
-    stage('Maven Validate') {
+	    stage('MVN Validate') {
         sh 'mvn validate'
     }
-	 stage('Maven Compile') {
-        sh 'mvn compile'
+	    stage('MVN Test') {
+       sh 'mvn test'
     }
-	 stage('Maven Test') {
-        sh 'mvn test'
+	    stage('MVN Package') {
+       sh 'mvn package'
     }
-	 stage('Maven Package') {
-        sh 'mvn package'
-    }
-	 stage('Maven Deploy') {
+	    stage('MVN Deploy') {
         sh 'mvn deploy'
     }
 }
-
